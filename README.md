@@ -28,6 +28,11 @@ DCE 无用代码移除。对于静态语言来说，做 DCE 相对简单，通�
 
 github 上有个 webpack + babel 进行 `Tree-shaking` 的 demo，不过已经很久没有更新了，pr 也没有人来合并，所以自己照着改写了一个 demo。
 
+clone：
+```
+git clone 未完成
+```
+
 安装：
 
 ```
