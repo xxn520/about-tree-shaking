@@ -28,19 +28,38 @@ DCE 无用代码移除。对于静态语言来说，做 DCE 相对简单，通�
 
 github 上有个 webpack + babel 进行 `Tree-shaking` 的 demo，不过已经很久没有更新了，pr 也没有人来合并，所以自己照着改写了一个 demo。
 
-clone：
+###### main.js
 ```
-git clone 未完成
+import { cube } from './maths.js'
+
+let output = document.getElementById('output')
+output.textContent = `cube(5) = ${cube(5)}`
 ```
 
-安装：
+###### maths.js
+```
+export function square (x) {
+	return x * x
+}
+
+export function cube (x) {
+	return x * x * x
+}
+```
+
+###### 简单解释
+
+看 build 生成的代码，情况和上文讲的一样，webpack2 会通过模块的静态分析把无用的 exports 移除，然后 Uglifyjs 在压缩时会把无用的代码移除。所以目前两者需要一起使用。
+
+###### 安装：
 
 ```
+git clone https://github.com/xxn520/about-tree-shaking.git
 cd about-tree-shaking/
 npm install
 ```
 
-两种运行方式：
+###### 两种运行方式：
 
 * 一次性构建:
     * `npm run build`

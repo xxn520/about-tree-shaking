@@ -1,3 +1,15 @@
 # OSX
 #
 .DS_Store
+
+# idea
+#
+.idea
+
+# Nodejs
+#
+node_modules
+
+# build
+#
+build
